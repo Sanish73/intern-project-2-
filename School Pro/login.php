@@ -32,14 +32,14 @@
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form2Example1">Email address</label>
-                                    <input type="email" id="form2Example1" class="form-control" placeholder="E-mail" />
+                                    <input type="email" name="email" id="form2Example1" class="form-control" placeholder="E-mail" />
                                 </div>
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
                                     <label class="form-label " for="form2Example2">Password</label>
                                     <!-- Simple link -->
                                     <a href="#!" class="float-end text-primary">Forgot password?</a>
-                                    <input type="password" id="form2Example2" class="form-control" placeholder="Password" />
+                                    <input type="password" name="password"  id="form2Example2" class="form-control" placeholder="Password" />
                                 </div>
                                 <!-- 2 column grid layout for inline styling -->
                                 <div class="row mb-4">
@@ -71,7 +71,16 @@
 
 
 if(isset($_POST['submit'])){
-    echo ("hi");
+    $email  = $_POST['email'] ;
+    $password = $_POST['password'];
+
+
+
+   if(!empty($_POST['email'] && !empty($_POST['password']))){
+        echo("login pass");
+   }else{
+    
+   }
 }
 
     ?>
