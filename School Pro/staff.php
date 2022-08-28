@@ -1,3 +1,8 @@
+<?php
+include('\xampp\htdocs\intern project(2)\School Pro\config\conn.php');
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -70,20 +75,50 @@
     <?php
 
 
-if(isset($_POST['submit'])){
-    $email  = $_POST['email'] ;
-    $password = $_POST['password'];
+if (isset($_POST['submit'])) {
+    $EMAIL  = $_POST['email'];
+    $PASSWORD = $_POST['password'];
+
+    if (!empty($EMAIL) && !empty($PASSWORD)) {
 
 
+        $sql = "SELECT * FROM tbl_student WHERE email ='$EMAIL' AND password='$PASSWORD'";
 
-   if(!empty($_POST['email'] && !empty($_POST['password']))){
-        echo("login pass");
-   }else{
-    
-   }
+        $qry = mysqli_query($conn, $sql) or die("student sql qry!!!");
+
+        if($sql){
+            echo ("Matched ")
+            
+        }else{
+            echo ("not matched");
+        }
+
+        // $count = mysqli_num_rows($qry);
+
+        // if ($count >= 1) {
+        //     // echo "there exist row!!";
+        //     while ($row = mysqli_fetch_assoc($qry)) {
+        //         $id = $row['id'];
+        //         $password = $row['password'];
+        //         $email = $row['email'];
+
+        //         echo $email;
+
+        //         // if ($email == $EMAIL  && $password == $PASSWORD) {
+        //         //     echo ("matched");
+        //         // }else{
+        //         //     echo ("not matched");
+        //         // }
+        //         // if
+            
+        //     }
+        // } else {
+        //     echo "there no row exit";
+        // }
+    }
 }
 
-    ?>
+?>
 
 
 
