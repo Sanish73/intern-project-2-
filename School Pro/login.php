@@ -56,7 +56,7 @@
                                 <div class="col-md-12">
                                    <input type="submit" class="col-12 btn btn-primary btn-block mb-4" value="submit" name="submit">
                                 </div>
-                                <p class="text-center"> <a href="register.php" class="text-primary"> Login As Faculty</a></p>
+                                <p class="text-center"> <a href="staff.php" class="text-primary"> Login As Faculty</a></p>
                             </form>
                         </div>
                     </div>
