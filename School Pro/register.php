@@ -66,7 +66,7 @@
                                     <button type="button" class="col-12 btn btn-primary btn-block mb-4">Create new
                                         Account</button>
                                 </div>
-                                <p class="text-center"> Already have account?<a href="login.html" class="text-primary">
+                                <p class="text-center"> Already have account?<a href="login.php" class="text-primary">
                                         Sign in</a></p>
                             </form>
                         </div>

@@ -93,7 +93,7 @@
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0 action-menu">
                         <li class="nav-item">
-                            <a class="nav-link " href="login.html">
+                            <a class="nav-link " href="login.php">
                                 <i class="bi bi-person "></i>
                             </a>
                         </li>
@@ -121,7 +121,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="img-fluid w-100 h-100 overflow-hidden"
-                    src="https://admin.nepalmegacollege.edu.np/uploads/slider/244d1-mega-cover-2.jpg""
+                    src="https://admin.nepalmegacollege.edu.np/uploads/slider/244d1-mega-cover-2.jpg"
                     class="d-block w-100" alt="...">
                 <div class="carousel-caption d-block">
                     <h5>Nepal Mega College</h5>
@@ -133,7 +133,7 @@
                     src="https://cdn.pixabay.com/photo/2017/02/05/00/08/graduation-2038864_960_720.jpg"
                     class="d-block w-100" alt="...">
                 <div class="carousel-caption d-block">
-                    <h5>Shree Suryodaya Secondary School</h5>
+                    <h5>Nepal Mega College</h5>
                     <p>“It’s not about perfect. It’s about effort.”</p>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     src="https://cdn.pixabay.com/photo/2017/09/08/00/37/friend-2727305_960_720.jpg"
                     class="d-block w-100" alt="...">
                 <div class="carousel-caption d-block">
-                    <h5>Shree Suryodaya Secondary School</h5>
+                    <h5>Nepal Mega College</h5>
                     <p>“Excellence is not a skill. It is an attitude.”</p>
                 </div>
             </div>

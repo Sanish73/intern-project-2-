@@ -60,7 +60,7 @@
                                     <button type="button" class="col-12 btn btn-primary btn-block mb-4">Sign
                                         in</button>
                                 </div>
-                                <p class="text-center"> Don't have account yet?<a href="register.html" class="text-primary"> Sign up</a></p>
+                                <p class="text-center"> Don't have account yet?<a href="register.php" class="text-primary"> Sign up</a></p>
                             </form>
                         </div>
                     </div>
