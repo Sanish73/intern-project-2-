@@ -44,7 +44,7 @@ include('\xampp\htdocs\intern project(2)\School Pro\config\conn.php');
                                     <label class="form-label " for="form2Example2">Password</label>
                                     <!-- Simple link -->
                                     <a href="#!" class="float-end text-primary">Forgot password?</a>
-                                    <input type="password" name="password"  id="form2Example2" class="form-control" placeholder="Password" />
+                                    <input type="password" name="password" id="form2Example2" class="form-control" placeholder="Password" />
                                 </div>
                                 <!-- 2 column grid layout for inline styling -->
                                 <div class="row mb-4">
@@ -59,7 +59,7 @@ include('\xampp\htdocs\intern project(2)\School Pro\config\conn.php');
 
                                 <!-- Submit button -->
                                 <div class="col-md-12">
-                                   <input type="submit" class="col-12 btn btn-primary btn-block mb-4" value="submit" name="submit">
+                                    <input type="submit" class="col-12 btn btn-primary btn-block mb-4" value="submit" name="submit">
                                 </div>
                                 <p class="text-center"> <a href="login.php" class="text-primary"> Login As Student</a></p>
                             </form>
@@ -75,50 +75,33 @@ include('\xampp\htdocs\intern project(2)\School Pro\config\conn.php');
     <?php
 
 
-if (isset($_POST['submit'])) {
-    $EMAIL  = $_POST['email'];
-    $PASSWORD = $_POST['password'];
+    if (isset($_POST['submit'])) {
+        $EMAIL  = $_POST['email'];
+        $PASSWORD = $_POST['password'];
 
-    if (!empty($EMAIL) && !empty($PASSWORD)) {
+        if (!empty($EMAIL) && !empty($PASSWORD)) {
 
 
-        $sql = "SELECT * FROM tbl_student WHERE email ='$EMAIL' AND password='$PASSWORD'";
+            $sql = "SELECT * FROM tbl_staff WHERE email ='$EMAIL' AND password='$PASSWORD'";
 
-        $qry = mysqli_query($conn, $sql) or die("student sql qry!!!");
+            $qry = mysqli_query($conn, $sql) or die("student sql qry!!!");
 
-        if($sql){
-            echo ("Matched ")
-            
-        }else{
-            echo ("not matched");
+            $count = mysqli_num_rows($qry);
+
+
+            if ($count >= 1) {
+                if ($sql) {
+                    echo ("Matched ");
+                } else {
+                    echo ("not matched");
+                }
+            } else {
+                echo ("no result found");
+            }
         }
-
-        // $count = mysqli_num_rows($qry);
-
-        // if ($count >= 1) {
-        //     // echo "there exist row!!";
-        //     while ($row = mysqli_fetch_assoc($qry)) {
-        //         $id = $row['id'];
-        //         $password = $row['password'];
-        //         $email = $row['email'];
-
-        //         echo $email;
-
-        //         // if ($email == $EMAIL  && $password == $PASSWORD) {
-        //         //     echo ("matched");
-        //         // }else{
-        //         //     echo ("not matched");
-        //         // }
-        //         // if
-            
-        //     }
-        // } else {
-        //     echo "there no row exit";
-        // }
     }
-}
 
-?>
+    ?>
 
 
 

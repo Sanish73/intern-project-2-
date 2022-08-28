@@ -37,22 +37,22 @@ include('\xampp\htdocs\intern project(2)\School Pro\config\conn.php');
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form2Example1">Email address</label>
-                                    <input type="email" name="email" id="form2Example1" class="form-control" placeholder="E-mail" />
+                                    <input type="email" name="email" id="form2Example1" class="form-control" value="<?php if(isset($_COOKIE['emailcookie'])){  echo $_COOKIE['emailcookie'];} ?>"  placeholder="E-mail" />
                                 </div>
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
                                     <label class="form-label " for="form2Example2">Password</label>
                                     <!-- Simple link -->
                                     <a href="#!" class="float-end text-primary">Forgot password?</a>
-                                    <input type="password" name="password" id="form2Example2" class="form-control" placeholder="Password" />
+                                    <input type="password" name="password" id="form2Example2" class="form-control" placeholder="Password" value="<?php if(isset($_COOKIE['passwordcookie'])){  echo $_COOKIE['passwordcookie'];} ?>" />
                                 </div>
                                 <!-- 2 column grid layout for inline styling -->
                                 <div class="row mb-4">
                                     <div class="col d-flex">
                                         <!-- Checkbox -->
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                                            <label class="form-check-label" for="form2Example31"> Remember me </label>
+                                            <input class="form-check-input" name="rememberme" type="checkbox" value="" id="form2Example31" checked />
+                                            <label class="form-check-label"   for="form2Example31"> Remember me </label>
                                         </div>
                                     </div>
                                 </div>
@@ -86,35 +86,28 @@ include('\xampp\htdocs\intern project(2)\School Pro\config\conn.php');
 
             $qry = mysqli_query($conn, $sql) or die("student sql qry!!!");
 
-            if($sql){
-                echo ("Matched ")
-                
-            }else{
-                echo ("not matched");
+            $count = mysqli_num_rows($qry);
+
+            if ($count >= 1) {
+                if ($sql) {
+                  
+
+                    if(isset($_POST['rememberme'])){
+                        setcookie('emailcookie',$EMAIL,time()+8000);
+                        setcookie('passwordcookie',$PASSWORD,time()+8000);
+                        // header('location:\xampp\htdocs\intern project(2)\School Pro\config\conn.php');
+                        echo ("remember me done");
+                    }else{
+                        echo (" remember me not done");
+                    }
+
+
+                } else {
+                    echo ("not matched");
+                }
+            } else {
+                echo ("no result found");
             }
-
-            // $count = mysqli_num_rows($qry);
-
-            // if ($count >= 1) {
-            //     // echo "there exist row!!";
-            //     while ($row = mysqli_fetch_assoc($qry)) {
-            //         $id = $row['id'];
-            //         $password = $row['password'];
-            //         $email = $row['email'];
-
-            //         echo $email;
-
-            //         // if ($email == $EMAIL  && $password == $PASSWORD) {
-            //         //     echo ("matched");
-            //         // }else{
-            //         //     echo ("not matched");
-            //         // }
-            //         // if
-                
-            //     }
-            // } else {
-            //     echo "there no row exit";
-            // }
         }
     }
 
