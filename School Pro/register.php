@@ -10,10 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
     <!-- End Bootstrap CSS -->
+
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
 
     <!--Custom Css-->
     <link rel="stylesheet" href="./CSS/style.css">
@@ -28,21 +27,19 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="offest-md-4">
-                            <h1 class="text-center mt-4 mb-4 fw-bolder">Register</h1>
-                            <form class="form-login" action="" method="POST">
+                            <h1 class="text-center mt-4 mb-4 fw-bolder">Faculty</h1>
+                            <form class="form-login" method="POST">
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form2Example1">Email address</label>
-                                    <input type="email"  name="email" id="form2Example1" class="form-control" placeholder="Email" />
+                                    <input type="email" name="email" id="form2Example1" class="form-control" placeholder="E-mail" />
                                 </div>
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
                                     <label class="form-label " for="form2Example2">Password</label>
-                                    <input type="password" name="password" id="form2Example2" class="form-control" placeholder="Password" />
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label " for="form2Example2">Confirm Password</label>
-                                    <input type="password"  name= "confirmpassword" id="form2Example2" class="form-control" placeholder="Confirm Password" />
+                                    <!-- Simple link -->
+                                    <a href="#!" class="float-end text-primary">Forgot password?</a>
+                                    <input type="password" name="password"  id="form2Example2" class="form-control" placeholder="Password" />
                                 </div>
                                 <!-- 2 column grid layout for inline styling -->
                                 <div class="row mb-4">
@@ -54,35 +51,40 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Submit button -->
-                                <div class="">
-                                    <button type="button" class="col-12 btn btn-primary btn-block mb-4">
-                                        <input type="submit" class="col-12 btn btn-primary btn-block mb-4" value="Create Account" name="submit">
 
+                                <!-- Submit button -->
+                                <div class="col-md-12">
+                                   <input type="submit" class="col-12 btn btn-primary btn-block mb-4" value="submit" name="submit">
                                 </div>
-                                <p class="text-center"> Already have account?<a href="login.php" class="text-primary">
-                                        Sign in</a></p>
+                                <p class="text-center"> <a href="login.php" class="text-primary"> Login As Student</a></p>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
 
-<?php
-    if(isset($_POST['submit'])){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $confirmPass = $_POST['confirmpassword'];
 
-        if(!empty($email) && !empty($password) && !empty($confirmPass)){
-            echo ("finally ");
-        }
-    }
-?>
+    <?php
+
+
+if(isset($_POST['submit'])){
+    $email  = $_POST['email'] ;
+    $password = $_POST['password'];
+
+
+
+   if(!empty($_POST['email'] && !empty($_POST['password']))){
+        echo("login pass");
+   }else{
+    
+   }
+}
+
+    ?>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
